@@ -26,8 +26,13 @@ export class FormInputComponent implements OnInit {
   }
 
   processFormInput(newInput:NgForm){
-    this.registryS.AddRegistration(newInput.value);
-    this.registryS.RetriveRegistration();
+
+    this.registryS
+    .AddRegistration(newInput.value)
+    .subscribe((result)=>{
+      console.log(result);
+    });
+
     this.router.navigate(['/complete',newInput.value.name]); 
     newInput.reset();
     

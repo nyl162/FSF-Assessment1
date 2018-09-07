@@ -7,7 +7,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 import { importModule } from './import.module';
-import { TestComponent } from './test/test.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { CompleteComponent } from './complete/complete.component';
 import { RoutingModule } from './routing.module';
@@ -15,7 +14,6 @@ import { RoutingModule } from './routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     FormInputComponent,
     CompleteComponent
   ],

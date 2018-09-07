@@ -8,24 +8,10 @@ import { environment } from '../../environments/environment';
 })
 export class RegistratedService {
 
-  private registered : InputI [] = [];
-
   constructor(private http: HttpClient) { }
 
   AddRegistration(n:InputI){
-    /*console.log('date format' , n.dob.format("DD/MM/YYYY"))
-    n.forEach(x => {
-
-      
-    });*/
-    this.registered.push(n);
-    this.http.post(`${environment.api_url}submit`, "test");
+    return this.http.post(`${environment.api_url}submit`, n);
   }
 
-  RetriveRegistration(){
-    this.registered.forEach((x,i) => {
-      console.log('Entry#: ', i);
-      console.log(x);
-    });
-  }
 }
