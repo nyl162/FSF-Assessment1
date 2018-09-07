@@ -1,9 +1,9 @@
       <form #newInput="ngForm" (ngSubmit)="processFormInput(newInput)" fxLayout="column">
           <mat-form-field>
-              <input type="text" name="email" placeholder="Email" ngModel matInput required>
+              <input type="text" name="email" placeholder="Email" ngModel matInput required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
           </mat-form-field>
           <mat-form-field>
-              <input type="password" name="password" placeholder="Password" ngModel matInput required>
+              <input type="password" name="password" placeholder="Password" ngModel matInput required pattern="^(?=.*\d)(?=.*[@#$])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
           </mat-form-field>
           <mat-form-field>
               <input type="text" name="name" placeholder="Name" ngModel matInput required>
@@ -24,13 +24,13 @@
             </mat-form-field>
           </div>
           <mat-form-field>
-              <input type="text" name="address" placeholder="Address" ngModel matInput required>
+              <textarea type="text" name="address" placeholder="Address" ngModel matInput required></textarea>
           </mat-form-field>
           <mat-form-field>
               <input type="text" name="country" placeholder="Country" ngModel matInput required>
           </mat-form-field>
           <mat-form-field>
-              <input type="text" name="contact" placeholder="Contact Number" ngModel matInput required>
+              <input type="tel" name="contact" placeholder="Contact Number" ngModel matInput required pattern="^[+]{0,1}[(]{0,1}[\d]{0,4}[)]{0,1}([\-]*[\d]+)$">
           </mat-form-field>
           
         <div>
