@@ -29,9 +29,9 @@ export class FormInputComponent implements OnInit {
 
     this.registryS
     .AddRegistration(newInput.value)
-    .subscribe((result)=>{
+    .subscribe(/*(result)=>{
       console.log(result);
-    });
+    }*/);
 
     this.router.navigate(['/complete',newInput.value.name]); 
     newInput.reset();
