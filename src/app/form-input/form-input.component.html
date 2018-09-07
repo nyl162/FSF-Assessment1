@@ -4,6 +4,10 @@
           </mat-form-field>
           <mat-form-field>
               <input type="password" name="password" placeholder="Password" ngModel matInput required pattern="^(?=.*\d)(?=.*[@#$])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+              <!---
+                <mat-hint>Minimum 8 characters must contain at lease one of the following: number,uppercase character, lowercase character and special character(@#$)</mat-hint>
+              --->
+              <mat-error>Minimum 8 characters must contain at lease one of the following: number,uppercase character, lowercase character and special character(@#$)</mat-error>
           </mat-form-field>
           <mat-form-field>
               <input type="text" name="name" placeholder="Name" ngModel matInput required>
@@ -30,7 +34,8 @@
               <input type="text" name="country" placeholder="Country" ngModel matInput required>
           </mat-form-field>
           <mat-form-field>
-              <input type="tel" name="contact" placeholder="Contact Number" ngModel matInput required pattern="^[+]{0,1}[(]{0,1}[\d]{0,4}[)]{0,1}([\-]*[\d]+)$">
+              <input type="tel" name="contact" placeholder="Contact Number" ngModel matInput required pattern="^[+]{0,1}[(]{0,1}[\d]{0,4}[)]{0,1}[\-]{0,1}[\d]*[\-]{0,1}[\d]*[\-]{0,1}[\d]+$">
+              <mat-error>Please input in following format ( country code ) area code - contact number - extension </mat-error>
           </mat-form-field>
           
         <div>

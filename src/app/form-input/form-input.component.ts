@@ -4,7 +4,7 @@ import {InputI} from '../models/models';
 import {RegistratedService} from '../services/registrated.service';
 
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+/*import {ErrorStateMatcher} from '@angular/material/core';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -13,7 +13,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
-
+*/
 @Component({
   selector: 'app-form-input',
   templateUrl: './form-input.component.html',
