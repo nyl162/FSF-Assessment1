@@ -8,12 +8,14 @@ import { environment } from '../environments/environment';
 
 import { importModule } from './import.module';
 import { TestComponent } from './test/test.component';
+import { FormInputComponent } from './form-input/form-input.component';
 //import { RoutingModule } from './routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    FormInputComponent
   ],
   imports: [
     BrowserModule,

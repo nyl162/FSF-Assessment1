@@ -1,0 +1,42 @@
+      <form #newInput="ngForm" (ngSubmit)="processFormInput(newInput)" fxLayout="column">
+          <mat-form-field>
+              <input type="text" name="email" placeholder="Email" ngModel matInput required>
+          </mat-form-field>
+          <mat-form-field>
+              <input type="password" name="password" placeholder="Password" ngModel matInput required>
+          </mat-form-field>
+          <mat-form-field>
+              <input type="text" name="name" placeholder="Name" ngModel matInput required>
+          </mat-form-field>
+          <div fxLayout = "row" fxLayoutGap="2vw">
+            <div fxLayout="column" fxLayoutAlign = "start" fxFlex="grow">
+              <div>Gender:</div>
+              <mat-radio-group name="gender" ngModel fxLayout="row" fxLayoutAlign = "start" fxLayoutGap="2vw" required>
+                  <mat-radio-button *ngFor="let item of gender" [value]="item">
+                    {{item}}  
+                  </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Date of Birth" ngModel matInput name="dob" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <mat-form-field>
+              <input type="text" name="address" placeholder="Address" ngModel matInput required>
+          </mat-form-field>
+          <mat-form-field>
+              <input type="text" name="country" placeholder="Country" ngModel matInput required>
+          </mat-form-field>
+          <mat-form-field>
+              <input type="text" name="contact" placeholder="Contact Number" ngModel matInput required>
+          </mat-form-field>
+          
+        <div>
+          <button mat-raised-button color="primary" type="submit" [disabled]="newInput.invalid">
+            <mat-icon>library_add</mat-icon>
+            Submit
+          </button>
+        </div>
+      </form>

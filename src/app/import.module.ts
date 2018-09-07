@@ -16,6 +16,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { PlatformModule } from "@angular/cdk/platform";
 import { ObserversModule } from "@angular/cdk/observers";
+import { FormsModule } from "@angular/forms";
 
 let MODULES = [
     MatToolbarModule,MatFormFieldModule,MatInputModule,
@@ -27,7 +28,8 @@ let MODULES = [
     MatListModule,
     MatGridListModule,
     PlatformModule,
-    ObserversModule
+    ObserversModule,
+    FormsModule
   ];
 
 @NgModule({
