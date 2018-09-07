@@ -35,6 +35,6 @@ export class FormInputComponent implements OnInit {
   processFormInput(newInput:NgForm){
     this.registryS.AddRegistration(newInput.value);
     this.registryS.RetriveRegistration();
-
+    
   }
 }
