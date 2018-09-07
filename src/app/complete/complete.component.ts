@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-complete',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompleteComponent implements OnInit {
 
-  constructor() { }
+  Name:string;
+
+  constructor( private activatedRoute:ActivatedRoute, private router: Router ) { }
 
   ngOnInit() {
+    this.Name = this.activatedRoute.snapshot.params.name
   }
 
 }

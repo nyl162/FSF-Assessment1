@@ -1,17 +1,14 @@
 import { BrowserModule } from "@angular/platform-browser";
 import {RouterModule, Routes} from '@angular/router'
 import { NgModule } from "@angular/core";
-import { TestComponent } from "./test/test.component";
-//import { CategoryComponent } from "./category/category.component";
-//import { ItemInCategoryComponent } from "./item-in-category/item-in-category.component";
-//import { DetailsComponent } from './details/details.component'; 
+import { FormInputComponent } from "./form-input/form-input.component";
+import { CompleteComponent } from "./complete/complete.component";
 
 
 const appRoutes :Routes = [
 
-    {path: '' , component: TestComponent},
- //   {path: 'item/:CategoryID' , component: ItemInCategoryComponent},
- //   {path: 'details/:CatID/:detailID' , component: DetailsComponent},
+    {path: '' , component: FormInputComponent},
+    {path: 'complete/:name' , component: CompleteComponent},
     {path: '**' , redirectTo: '/', pathMatch: 'full'}
 
 ];

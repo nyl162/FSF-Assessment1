@@ -6,6 +6,8 @@ import * as moment from 'moment'
 
 import {NgForm} from '@angular/forms';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-form-input',
   templateUrl: './form-input.component.html',
@@ -17,7 +19,7 @@ export class FormInputComponent implements OnInit {
 
   maxDate: Moment;
 
-  constructor(private registryS: RegistratedService) { }
+  constructor(private registryS: RegistratedService, private router: Router ) { }
 
   ngOnInit() {
     this.maxDate = moment().subtract(18,'years')
@@ -26,6 +28,8 @@ export class FormInputComponent implements OnInit {
   processFormInput(newInput:NgForm){
     this.registryS.AddRegistration(newInput.value);
     this.registryS.RetriveRegistration();
+    this.router.navigate(['/complete',newInput.value.name]); 
+    newInput.reset();
     
   }
 }
