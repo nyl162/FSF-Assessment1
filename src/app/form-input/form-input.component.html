@@ -9,7 +9,7 @@
               <mat-error>Must contain at lease one of the following: number,uppercase character, lowercase character and special character (@#$).</mat-error>
           </mat-form-field>
           <mat-form-field>
-              <input type="text" name="name" placeholder="Name" ngModel matInput required>
+              <input type="text" name="name" placeholder="Given Name" ngModel matInput required>
           </mat-form-field>
           <div fxLayout = "row" fxLayoutGap="2vw">
             <div fxLayout="column" fxLayoutAlign = "start" fxFlex="grow">
@@ -27,10 +27,10 @@
             </mat-form-field>
           </div>
           <mat-form-field>
-              <textarea type="text" name="address" placeholder="Address" ngModel matInput required></textarea>
+              <textarea type="text" name="address" placeholder="Mailing Address" ngModel matInput required></textarea>
           </mat-form-field>
           <mat-form-field>
-              <input type="text" name="country" placeholder="Country" ngModel matInput required>
+              <input type="text" name="country" placeholder="Country of Residence" ngModel matInput required>
           </mat-form-field>
           <mat-form-field>
               <input type="tel" name="contact" placeholder="Contact Number" ngModel matInput required pattern="^[+]{0,1}[(]{0,1}[\d]{0,4}[)]{0,1}[\-]{0,1}[\d]*[\-]{0,1}[\d]*[\-]{0,1}[\d]+$">
