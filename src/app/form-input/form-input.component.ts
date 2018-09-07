@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Moment } from 'moment';
+import {InputI} from '../models/models';
+import {RegistratedService} from '../services/registrated.service';
 
 @Component({
   selector: 'app-form-input',
@@ -11,12 +13,14 @@ export class FormInputComponent implements OnInit {
 
   gender : string[] = ["Male", "Female"]
 
-  constructor() { }
+  constructor(private registryS: RegistratedService) { }
 
   ngOnInit() {
   }
 
   processFormInput(newInput:NgForm){
-    console.log(newInput.value);
+    this.registryS.AddRegistration(newInput.value);
+    this.registryS.RetriveRegistration();
+
   }
 }
