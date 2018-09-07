@@ -1,13 +1,12 @@
       <form #newInput="ngForm" (ngSubmit)="processFormInput(newInput)" fxLayout="column">
           <mat-form-field>
               <input type="text" name="email" placeholder="Email" ngModel matInput required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <mat-error>Please enter valid email address.</mat-error>
           </mat-form-field>
           <mat-form-field>
               <input type="password" name="password" placeholder="Password" ngModel matInput required pattern="^(?=.*\d)(?=.*[@#$])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
-              <!---
-                <mat-hint>Minimum 8 characters must contain at lease one of the following: number,uppercase character, lowercase character and special character(@#$)</mat-hint>
-              --->
-              <mat-error>Minimum 8 characters must contain at lease one of the following: number,uppercase character, lowercase character and special character(@#$)</mat-error>
+                <mat-hint>Minimum 8 characters.</mat-hint>
+              <mat-error>Must contain at lease one of the following: number,uppercase character, lowercase character and special character (@#$).</mat-error>
           </mat-form-field>
           <mat-form-field>
               <input type="text" name="name" placeholder="Name" ngModel matInput required>
@@ -22,7 +21,7 @@
               </mat-radio-group>
             </div>
             <mat-form-field>
-                <input matInput [matDatepicker]="picker" placeholder="Date of Birth" ngModel matInput name="dob" required>
+                <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [max] = "maxDate" ngModel matInput name="dob" required>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -39,7 +38,7 @@
           </mat-form-field>
           
         <div>
-          <button mat-raised-button color="primary" type="submit" [disabled]="newInput.invalid">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!newInput.invalid">
             <mat-icon>library_add</mat-icon>
             Submit
           </button>

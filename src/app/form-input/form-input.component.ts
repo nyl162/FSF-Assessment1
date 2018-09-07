@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Moment } from 'moment';
 import {InputI} from '../models/models';
 import {RegistratedService} from '../services/registrated.service';
+import * as moment from 'moment'
 
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 /*import {ErrorStateMatcher} from '@angular/material/core';
@@ -23,9 +24,12 @@ export class FormInputComponent implements OnInit {
 
   gender : string[] = ["Male", "Female"]
 
+  maxDate: Moment;
+
   constructor(private registryS: RegistratedService) { }
 
   ngOnInit() {
+    this.maxDate = moment().subtract(18,'years')
   }
 
   processFormInput(newInput:NgForm){
